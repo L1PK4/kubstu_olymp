@@ -1,10 +1,8 @@
-def summ(x):
-    ans = 0
-    while x:
-        ans += x % 10
-        x //= 10
-    return ans
-
-n, k = tuple(map(int, input().split()))
-ans = list(filter(lambda x : not (summ(x) % k), range(1, n + 1)))
-print(len(ans))
+def gcd(a, b):
+    if b == 0:
+        return a
+    else:
+        return gcd(b, a % b)
+a, b = tuple(map(int, input().split()))
+d = gcd(a,b)
+print(a // d, b // d)
